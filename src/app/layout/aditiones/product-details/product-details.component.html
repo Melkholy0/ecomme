@@ -1,0 +1,47 @@
+
+<div class="container  ">
+    
+<div class="d-flex justify-content-center align-items-center gap-3">
+ <div class=" mx-auto my-5 w-25 border">
+       
+    <owl-carousel-o [options]="customOptions">
+
+        @for (item of product.images ; track $index) {
+            <ng-template carouselSlide >
+                <img [src]="item"  class="w-100">
+              </ng-template>
+        }
+    </owl-carousel-o>
+
+ </div>
+
+
+
+
+
+
+
+    <div class="d-flex flex-column   ">
+
+        <h2 class="fw-bold">{{product.title }}</h2>
+        <br>
+        <h3>{{product.description}}</h3>
+        <br>
+        <h5>{{product.category.name}}</h5>
+
+
+
+        <button type="button" class="w-100 bg-main text-white mt-5 border-3">Add</button>
+        
+    
+    </div>
+
+    
+
+</div>
+
+
+
+
+
+</div>

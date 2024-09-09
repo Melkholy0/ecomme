@@ -1,0 +1,96 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+<div class="  w-75 mx-auto d-flex justify-content-center align-items-center ">
+  <div class="  w-25  mt-3">
+      
+  <owl-carousel-o [options]="customOptions" >
+
+    @for (item of allProducts; track $index) {
+        <ng-template carouselSlide >
+            <img class=" w-100 " [src]="item.imageCover" >
+          </ng-template>
+    }
+    
+      </owl-carousel-o>
+     
+  </div>
+
+  <div class="w-25 d-flex flex-column  ">
+    <img src= "assets/images/main-slider-1.jpeg" class="w-100  " alt="">
+    <img src= "assets/images/main-slider-2.jpeg" class="w-100" alt="">
+  </div>
+</div>
+
+
+
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<input [(ngModel)]="hamada" class="w-50 mx-auto form-control my-5" placeholder="serch product Name">
+
+
+
+<div class="container">
+    <div class="row ">
+        
+
+@for (item of allProducts |  serch: hamada ; track $index) {
+
+<div class="col-md-6 col-lg-3 product  p-2">
+    <div   class="card " style="width: 18rem;">
+        <div  [routerLink]="['/productDetails' , item._id]">
+            <img [src]="item.imageCover" class="card-img-top" alt="...">
+        <p>{{item.category.name }}</p>
+        <div class="card-body   "   >
+            <h5 class="card-title fw-bold">{{item.title}}</h5>
+    <div class="d-flex justify-content-between">
+        <p class="card-text fw-bold text-main">{{item.price}}EGY</p>
+        <p>
+            <i class="fa-solid fa-star rating-color"></i>
+            
+            {{item.ratingsAverage}}
+        
+        </p>
+    </div >
+        </div>
+    
+        </div>
+        <div class="product">
+            
+            <button  (click)="addToCart(item._id)" type="button" class="btn btn-success w-100 bg-main">
+              Add to Cart
+            </button>
+          </div>
+           
+    </div>      
+    
+</div>
+
+}
+    </div>
+</div>
+
+
+

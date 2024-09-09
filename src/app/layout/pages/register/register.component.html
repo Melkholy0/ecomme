@@ -1,0 +1,159 @@
+<div class="w-75 my-5 mx-auto">
+    <h3 class="fw-bold text-info-emphasis">Register New</h3>
+
+@if (errMessage) {
+  <h2 class="alert alert-danger">{{errMessage}}</h2>
+}
+
+    <form [formGroup]="registerForms" (ngSubmit)="registerSubmit()">
+
+
+
+      <div class="mb-3">
+        <label class="form-label">Name :</label>
+        <input formControlName="name" class="form-control">
+
+        @if (registerForms.get('name')?.errors && registerForms.get('name')?.touched) {
+          <div class="alert alert-danger">
+            @if (registerForms.get('name')?.errors?.['required']) {
+              <p>Name is Required</p>
+            }
+            @else if (registerForms.get('name')?.errors?.['minlength']) {
+              <p>Name should be more than or equlas 3 charts</p>
+            }
+            @else if (registerForms.get('name')?.errors?.['maxlength']) {
+              <p>Name should be less than or equlas 20 charts</p>
+            }
+          </div>
+        }
+      </div>
+
+
+
+
+
+
+
+
+
+      <div class="mb-3">
+        <label class="form-label">email :</label>
+        <input formControlName="email"  class="form-control">
+
+        @if (registerForms.get('email')?.errors && registerForms.get('email')?.touched) {
+          <div class="alert alert-danger">
+            @if (registerForms.get('email')?.errors?.['required']) {
+              <p>Email is Required</p>
+            }
+            @else if (registerForms.get('email')?.errors?.['email']) {
+            <p>kindly inter valid email</p>
+            }
+          </div>
+        }
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+      <div class="mb-3">
+        <label class="form-label">phone :</label>
+        <input formControlName="phone"  class="form-control">
+        @if (registerForms.get('phone')?.errors && registerForms.get('phone')?.touched) {
+          <div class="alert alert-danger">
+            @if (registerForms.get('phone')?.errors?.['required']) {
+              <p>Phone is Required</p>
+            }
+            @else if (registerForms.get('phone')?.errors?.['pattern']) {
+              <p>kindly inter valid phone</p>
+
+            }
+          </div>
+        }
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="mb-3">
+        <label class="form-label">password :</label>
+        <input   formControlName="password" class="form-control">
+
+        @if (registerForms.get('password')?.errors && registerForms.get('password')?.touched) {
+          <div class="alert alert-danger">
+            @if (registerForms.get('password')?.errors?.['required']) {
+              <p>password is Required</p>
+            }
+            @else if (registerForms.get('password')?.errors?.['pattern']) {
+              <p>kindly inter valid password</p>
+
+            }
+          </div>
+        }
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="mb-3">
+        <label class="form-label">Re_Password :</label>
+        <input formControlName="rePassword" class="form-control">
+
+
+        @if (registerForms.get('rePassword')?.errors && registerForms.get('rePassword')?.touched) {
+          <div class="alert alert-danger">
+            @if (registerForms.get('rePassword')?.errors?.['required']) {
+              <p>RePassword is Required</p>
+            }
+            @else if (registerForms.get('rePassword')?.errors?.['pattern']) {
+              <p>kindly inter valid RePassword</p>
+
+            }
+          </div>
+        }
+      </div>
+
+
+
+      @if (registerForms.errors) {
+        <div class="alert alert-danger">
+          <p>pAssword not matched</p>
+        </div>
+      }
+
+
+      
+
+
+      <button  [disabled]="registerForms.invalid" type="submit" class="btn bg-dark text-white d-block ms-auto">Register
+        @if (isLoding) {
+          <span>
+            <i class="fa  fa-spinner fa-spin"></i>
+          </span>
+        }
+      </button>
+    </form>
+  </div>

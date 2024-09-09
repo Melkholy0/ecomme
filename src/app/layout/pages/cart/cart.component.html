@@ -1,0 +1,186 @@
+
+
+<div class="container">
+            
+
+
+
+<div class="relative w-75  mx-auto my-5 overflow-x-auto shadow p-4 rounded">
+   
+   
+ 
+
+  
+  
+      <tbody>
+         
+        
+
+
+
+
+
+                 
+            @for (item of allCart; track $index)
+            {
+               <div class="d-flex justify-content-center align-items-center " >
+
+                <tr >
+                    <td>
+                        <img [src]="item.product.imageCover" class=" w-25 border" >
+                      </td>
+                     
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="fw-bold">{{ item.product.title }}</span>
+                          <button (click)="changeCount(item.product._id, item.count + 1)"   class="bg-main text-white">
+                            <i class="fas fa-plus"></i>
+                          </button>
+                          <input type="number" class="form-control text-center" style="width: 60px;" [value]="item.count" readonly>
+                          <button (click)="changeCount(item.product._id, item.count - 1)" class="bg-main text-white">
+                            <i class="fas fa-minus"></i>
+                          </button>
+
+                          <span>{{ item.price }}EGY</span>
+
+
+
+
+                          <button (click)="deleteItem(item.product._id)" class="bg-main w-50 text-white border ">
+                            <i class="fas fa-trash-alt"></i> Remove
+                          </button>
+                        </div>
+                      </td>
+                      
+                     
+                </tr>
+               </div>
+            }
+
+
+
+
+         
+      </tbody>
+ 
+      <button  class="btn bg-dark text-white d-block ms-auto " [routerLink]="['/reqOrder' , cartId]">ORder</button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+       

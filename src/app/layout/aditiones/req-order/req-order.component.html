@@ -1,0 +1,64 @@
+<div class="relative w-75  mx-auto my-5 overflow-x-auto shadow p-4 rounded">
+<h1 class="text-center text-main fw-bold h3">
+    Enter Your Data
+</h1>
+
+
+
+
+<form   [formGroup]="userData"     (ngSubmit)="checkout()">  
+
+
+
+    
+    <div class="input-group mb-3 d-flex justify-content-center align-items-center gap-2">
+
+        <label class="fw-bold" >Address :</label>
+        <input  formControlName="details" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+
+
+
+    <div class="input-group mb-3 d-flex justify-content-center align-items-center gap-2">
+
+        <label class="fw-bold" >Phone :</label>
+        <input  formControlName="phone" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+
+
+
+
+    <div class="input-group mb-3 d-flex justify-content-center align-items-center gap-2">
+
+        <label class="fw-bold" >City :</label>
+        <input  formControlName="city" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+
+
+
+
+
+
+
+
+      
+<button  [disabled]="userData.invalid" type="submit" class="btn bg-dark text-white d-block ms-auto ">ChekOut
+    
+  </button>
+</form>
+
+
+ 
+      
+
+
+
+
+
+
+
+
+
+
+
+</div>

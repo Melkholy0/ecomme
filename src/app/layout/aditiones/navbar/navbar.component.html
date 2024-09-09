@@ -1,0 +1,95 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container">
+    <img src="assets/images/freshcart-logo.svg" alt="">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup"> 
+        <div class="navbar-nav ">
+        
+    @if (isLoding) {
+        <a class="nav-link" routerLink="home"  routerLinkActive="rounded-3 root p-2 bg-black text-white">{{'Home' | translate}}</a> 
+        <a class="nav-link" routerLink="cart" routerLinkActive="rounded-3 root p-2 bg-black text-white">{{'Carts' | translate}}</a>
+        <a class="nav-link" routerLink="products"routerLinkActive="rounded-3 root p-2 bg-black text-white" >{{'products' | translate}}</a>
+        <a class="nav-link" routerLink="brands" routerLinkActive="rounded-3 root p-2 bg-black text-white">{{'Brands' | translate}}</a>
+        <a class="nav-link" routerLink="categories" routerLinkActive="rounded-3 root p-2 bg-black text-white">{{'Categories' | translate}}</a>
+        
+    }
+   
+    
+        </div>
+        <div class="icons d-flex gap-3 align-items-center  ">
+            <a href="https://www.facebook.com/?locale=ar_AR"><i class="fa-brands fa-facebook facebookk "></i></a>
+            <a href="https://x.com/?lang=ar">  <i class="fa-brands fa-twitter twiterr "></i></a>
+            <a href="https://www.instagram.com/">  <i class="fa-brands fa-instagram  insta"></i></a>
+            <a href="https://www.youtube.com/"> <i class="fa-brands fa-youtube yout"></i></a>
+            <a href="https://www.linkedin.com/login/ar"> <i class="fa-brands fa-linkedin linkd"></i></a>
+           
+
+      
+        
+
+@if (!isLoding) {
+    
+        
+    <a class="nav-link" routerLink="login"    routerLinkActive="rounded-3 root p-2 bg-black text-white">{{'logIn' | translate}}</a> 
+    <a class="nav-link" routerLink="register"    routerLinkActive="rounded-3 root p-2 bg-black text-white ">{{'Register' | translate}}</a> 
+    
+}   
+<li><a class="cursor-pointer text-decoration-none text-main  " (click)="changeLang('en')" >En</a></li>
+        <li><a class="cursor-pointer text-decoration-none text-main" (click)="changeLang('ar')" >Ar</a></li>
+
+
+    @if (isLoding) {
+        <i class="fa-solid fa-cart-shopping text-main cursor-pointer"  routerLink="cart"></i>
+        
+        <a  (click)="isLogout()" class="nav-link " routerLink="logout"  >{{'Logout' | translate}}</a> 
+    }
+    
+
+
+
+
+        
+        </div>
+    </div>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

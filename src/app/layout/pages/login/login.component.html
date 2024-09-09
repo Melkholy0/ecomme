@@ -1,0 +1,104 @@
+<div class="w-75 my-5 mx-auto">
+    <h3 class="fw-bold text-info-emphasis">Login New</h3>
+
+@if (errMessage) {
+  <h2 class="alert alert-danger">{{errMessage}}</h2>
+}
+
+    <form [formGroup]="loginForms" (ngSubmit)="loginSubmit()">
+
+
+
+
+
+
+
+
+
+
+
+      <div class="mb-3">
+        <label class="form-label">email :</label>
+        <input formControlName="email"  class="form-control">
+
+        @if (loginForms.get('email')?.errors && loginForms.get('email')?.touched) {
+          <div class="alert alert-danger">
+            @if (loginForms.get('email')?.errors?.['required']) {
+              <p>Email is Required</p>
+            }
+            @else if (loginForms.get('email')?.errors?.['email']) {
+            <p>kindly inter valid email</p>
+            }
+          </div>
+        }
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="mb-3">
+        <label class="form-label">password :</label>
+        <input   formControlName="password" class="form-control">
+
+        @if (loginForms.get('password')?.errors && loginForms.get('password')?.touched) {
+          <div class="alert alert-danger">
+            @if (loginForms.get('password')?.errors?.['required']) {
+              <p>password is Required</p>
+            }
+            @else if (loginForms.get('password')?.errors?.['pattern']) {
+              <p>kindly inter valid password</p>
+
+            }
+          </div>
+        }
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="d-flex justify-content-end align-items-center gap-3" >
+  
+<a class="text-decoration-none text-dark " routerLink="/forgetPassword">Forget Password</a>
+
+      
+
+
+<button  [disabled]="loginForms.invalid" type="submit" class="btn bg-dark text-white d-block ">Login
+  @if (isLoding) {
+    <span>
+      <i class="fa  fa-spinner fa-spin"></i>
+    </span>
+  }
+</button>
+</div>
+    </form>
+  </div>
