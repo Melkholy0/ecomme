@@ -91,7 +91,7 @@
 
       <div class="mb-3">
         <label class="form-label">password :</label>
-        <input   formControlName="password" class="form-control">
+        <input  type="password" formControlName="password" class="form-control">
 
         @if (registerForms.get('password')?.errors && registerForms.get('password')?.touched) {
           <div class="alert alert-danger">
@@ -120,7 +120,7 @@
 
       <div class="mb-3">
         <label class="form-label">Re_Password :</label>
-        <input formControlName="rePassword" class="form-control">
+        <input type="password" formControlName="rePassword" class="form-control">
 
 
         @if (registerForms.get('rePassword')?.errors && registerForms.get('rePassword')?.touched) {
